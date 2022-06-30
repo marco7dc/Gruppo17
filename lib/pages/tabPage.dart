@@ -10,6 +10,8 @@ class TabPage extends StatefulWidget {
   State<TabPage> createState() => _TabPageState();
 }
 
+// this page is a simple BottomNavigatorBar that respond on the event onTap
+// when the user click an icon this page respond with the relative page
 class _TabPageState extends State<TabPage> {
   List pages = [HomePage(), const ShowDatabase(), SensorPage()];
 
