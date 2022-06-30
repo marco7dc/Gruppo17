@@ -73,6 +73,7 @@ class _SensorPageState extends State<SensorPage> {
               height: 10,
             ),
             Center(
+              // LEGENDA
               child: Container(
                 margin: const EdgeInsets.only(left: 10),
                 width: 275,
@@ -126,6 +127,7 @@ class _SensorPageState extends State<SensorPage> {
             height: 5,
           ),
           Container(
+            // GRAFICO
             width: 400,
             height: 300,
             margin: const EdgeInsets.only(right: 10),
@@ -192,6 +194,7 @@ class _SensorPageState extends State<SensorPage> {
             ),
           ),
           Container(
+            // DATI SENSORI
             width: 300,
             height: 160,
             decoration: BoxDecoration(
@@ -249,37 +252,14 @@ class _SensorPageState extends State<SensorPage> {
             ),
           ),
           Padding(
+            // PULSANTI
             padding: const EdgeInsets.all(16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ChartPage(Chart: list_acc_y),
-                          ));
-                    },
-                    child: const Text('CHART'),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
-                        onPrimary: Colors.black // Background color
-                        ),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: _RefreshChart,
-                  child: Text('REFRESH'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
-                    onPrimary: Colors.black, // Background color
-                  ),
-                ),
                 ElevatedButton(
                   onPressed: _setChart,
-                  child: Text('STAMPA'),
+                  child: Text('START'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green,
                     onPrimary: Colors.black, // Background color
@@ -288,6 +268,28 @@ class _SensorPageState extends State<SensorPage> {
                 ElevatedButton(
                   onPressed: _stopTimer,
                   child: Text('STOP'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green,
+                    onPrimary: Colors.black, // Background color
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChartPage(Chart: list_acc_y),
+                        ));
+                  },
+                  child: const Text('CHART'),
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.green,
+                      onPrimary: Colors.black // Background color
+                      ),
+                ),
+                ElevatedButton(
+                  onPressed: _RefreshChart,
+                  child: Text('REFRESH'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green,
                     onPrimary: Colors.black, // Background color
